@@ -1,4 +1,7 @@
 # WinIo4J
+
+[![Gitter](https://badges.gitter.im/supermoonie/winio4J.svg)](https://gitter.im/supermoonie/winio4J?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+
 A Java JNA wrapper for WinIo.
 
 WinIo4J is released and distributed under the [Apache License, v2.0](http://www.apache.org/licenses/LICENSE-2.0).
@@ -12,8 +15,6 @@ The library provides access to "WinIo64.dll" or "WinIo32.dll" and support for:
 - Can run as No-Administrator (after execute WinIoInstall.exe)
 
 # Notice
-
-[![Gitter](https://badges.gitter.im/supermoonie/winio4J.svg)](https://gitter.im/supermoonie/winio4J?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 1. If your Windows is 64 Bit , you should run this command as Administrator in cmd:
 

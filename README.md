@@ -13,6 +13,8 @@ The library provides access to "WinIo64.dll" or "WinIo32.dll" and support for:
 
 # Notice
 
+[![Gitter](https://badges.gitter.im/supermoonie/winio4J.svg)](https://gitter.im/supermoonie/winio4J?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+
 1. If your Windows is 64 Bit , you should run this command as Administrator in cmd:
 
    > bcdedit /set testsigning on 

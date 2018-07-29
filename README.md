@@ -1,4 +1,7 @@
 # WinIo4J
+
+[![Join the chat at https://gitter.im/supermoonie/winio4J](https://badges.gitter.im/supermoonie/winio4J.svg)](https://gitter.im/supermoonie/winio4J?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 A Java JNA wrapper for WinIo.
 
 WinIo4J is released and distributed under the [Apache License, v2.0](http://www.apache.org/licenses/LICENSE-2.0).

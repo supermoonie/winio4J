@@ -1,4 +1,4 @@
-package xyz.supermoonie;
+package com.github.supermoonie;
 
 import static org.junit.Assert.assertTrue;
 

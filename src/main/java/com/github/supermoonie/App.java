@@ -1,10 +1,10 @@
-package xyz.supermoonie;
+package com.github.supermoonie;
 
-import xyz.supermoonie.winio.VirtualKeyBoard;
+import com.github.supermoonie.winio.VirtualKeyBoard;
 
 /**
  * Hello world!
- *
+ *aB
  */
 public class App 
 {

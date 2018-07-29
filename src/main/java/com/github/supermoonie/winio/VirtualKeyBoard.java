@@ -1,11 +1,10 @@
-package xyz.supermoonie.winio;
+package com.github.supermoonie.winio;
 
 import com.sun.jna.Memory;
 import com.sun.jna.Pointer;
 import com.sun.jna.WString;
 
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
@@ -21,11 +20,13 @@ public class VirtualKeyBoard {
 
     private static final String HOME = System.getProperty("user.home");
 
-    private static final String WIN_IO_HOME = HOME + File.separator + "winIo";
+    private static final String WIN_IO_HOME = HOME + File.separator + "Desktop" + File.separator + "WinIo";
 
     private static final String WIN_32_SYS = "WinIo32.sys";
 
     private static final String WIN_64_SYS = "WinIo64.sys";
+
+    private static final String WIN_IO_INSTALLER = "WinIoInstall.exe";
 
     static {
         String x86 = "x86";
@@ -43,6 +44,7 @@ public class VirtualKeyBoard {
             driverName = WIN_IO_HOME + File.separator + WIN_64_SYS;
             extract(driverName, WIN_64_SYS);
         }
+        extract(WIN_IO_HOME + File.separator + WIN_IO_INSTALLER, WIN_IO_INSTALLER);
         if (!WIN_IO.InitializeWinIo(new WString(driverName))) {
             throw new IllegalStateException("Cannot Initialize the WinIO");
         }

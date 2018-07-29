@@ -1,4 +1,4 @@
-package xyz.supermoonie.winio;
+package com.github.supermoonie.winio;
 
 import java.util.HashMap;
 import java.util.Map;

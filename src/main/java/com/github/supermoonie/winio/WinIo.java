@@ -1,4 +1,4 @@
-package xyz.supermoonie.winio;
+package com.github.supermoonie.winio;
 
 import com.sun.jna.Library;
 import com.sun.jna.Native;

@@ -28,15 +28,17 @@ import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 
 /**
+ * Virtual KeyBoard
+ *
+ *
  * @author supermoonie
  * @date 2018/7/27
  */
 public class VirtualKeyBoard {
+
     private static final WinIo WIN_IO = WinIo.INSTANCE;
 
-    private static final String HOME = System.getProperty("user.home");
-
-    private static final String WIN_IO_HOME = HOME + File.separator + "Desktop" + File.separator + "WinIo";
+    private static final String WIN_IO_HOME =  System.getProperty("user.home") + File.separator + "Desktop" + File.separator + "WinIo";
 
     private static final String WIN_32_SYS = "WinIo32.sys";
 
@@ -75,7 +77,7 @@ public class VirtualKeyBoard {
     }
 
     /**
-     * 等待键盘缓冲区为空
+     * Wait keyboard buffer is empty
      */
     private static void KBCWait4IBE() {
         int val;
@@ -88,14 +90,14 @@ public class VirtualKeyBoard {
         } while ((0x2 & val) > 0);
     }
 
-    private static void down(int key) throws Exception {
+    private static void down(int key) {
         KBCWait4IBE();
         WIN_IO.SetPortVal(WinIo.CONTROL_PORT, 0xd2, 1);
         KBCWait4IBE();
         WIN_IO.SetPortVal(WinIo.DATA_PORT, key, 1);
     }
 
-    private static void up(int key) throws Exception {
+    private static void up(int key) {
         KBCWait4IBE();
         WIN_IO.SetPortVal(WinIo.CONTROL_PORT, 0xd2, 1);
         KBCWait4IBE();

@@ -21,7 +21,7 @@ import java.util.Map;
 
 /**
  *
- * 虚拟键映射
+ * Virtual Key Mapping
  * https://www.win.tue.nl/~aeb/linux/kbd/scancodes-1.html
  *
  * @author supermoonie
@@ -30,12 +30,12 @@ import java.util.Map;
 public class VirtualKeyMapping {
 
     /**
-     * 基本字符映射
+     * Base virtual keys
      */
     static final Map<String, Integer> VK_MAP = new HashMap<>();
 
     /**
-     * 大写字母以及需要shift 的字符映射
+     * The virtual keys need shift
      */
     static final Map<String, Integer> NEED_SHIFT_VK = new HashMap<>();
 
@@ -164,9 +164,9 @@ public class VirtualKeyMapping {
     }
 
     /**
-     * 获取支持的字符列表
+     * Get all support keys
      *
-     * @return  字符列表
+     * @return  Return all support keys
      */
     public static String[] getSupportKeys() {
         String[] vkArray = VK_MAP.keySet().toArray(new String[0]);

@@ -25,7 +25,7 @@ import com.sun.jna.win32.W32APIOptions;
 
 /**
  *
- * 提供对 WinIo32.dll 或 WinIo64.dll 的访问
+ * Provides access to the WinIo64.dll or WinIo32.dll library.
  *
  * @author supermoonie
  * @date 2018/7/27
@@ -40,39 +40,51 @@ public interface WinIo extends Library {
 	int DATA_PORT = 0x60;
 
 	/**
-	 * 初始化WinIo：
-	 * 		1. 安装 winIo 驱动
-	 * 		2. 创建 winIo 服务并随系统一起启动
-	 * @param path		winIo 驱动路径
-	 * @return		初始化成功返回 true 否则返回 false
+	 * This function initializes the WinIo library.
+	 * The InitializeWinIo function must be called before using any other function in the library.
+	 * Under Windows NT/2000/XP, calling InitializeWinIo grants the application full access to the I/O address space.
+	 * Following a call to this function, an application is free to use the _inp/_outp functions provided by the C run-time library to access I/O ports on the system.
+	 *
+	 * @param path		The absolute path of WinIo64.sys or WinIo32.sys
+	 * @return		If the function succeeds, the return value is true. Otherwise, the function returns false.
 	 */
 	boolean InitializeWinIo(WString path);
 
 	/**
-	 * 关闭 winIo：
-	 * 		1. 关闭 winIo 服务
-	 * 		2. 移除 winIo 驱动
+	 * This function performs cleanup of the WinIo library.
+	 * The ShutdownWinIo function must be called before terminating the application or in case the WinIo library is no longer required.
+	 * This function shuts down the WinIo library and frees the resources which were allocated by a call to the InitializeWinIo function.
 	 */
 	void ShutdownWinIo();
 
 	/**
 	 *
-	 * 将一个字节/字/双字的数据写入输入或输出接口
+	 * This function reads a BYTE/WORD/DWORD value from an I/O port.
+	 * The GetPortVal function reads a byte, a word or a double word from the specified I/O port.
+	 * Note: Under Windows 98/ME, an application must use the GetPortVal function to read values from an I/O port.
+	 * Under Windows NT/2000/XP, it is possible to use the _inp/_inpw/_inpd functions instead of using GetPortVal,
+	 * provided that the InitializeWinIo function has been called beforehand.
 	 *
-	 * @param portAddr		输入输出口地址
-	 * @param pPortVal		要写入口的数据
-	 * @param size			要写的数据个数，可以是 1 (BYTE), 2 (WORD) or 4 (DWORD)
-	 * @return		调用成功返回 true，失败返回 false
+	 * @param portAddr		[in] I/O port address
+	 * @param pPortVal		[out] Pointer to a DWORD variable that receives the value obtained from the port.
+	 * @param size		[in] Number of bytes to read.
+	 *                  Can be 1 (BYTE), 2 (WORD) or 4 (DWORD).
+	 * @return		If the function succeeds, the return value is true. Otherwise, the function returns false.
 	 */
 	boolean GetPortVal(int portAddr, Pointer pPortVal, int size);
 
 	/**
-	 * 从一个输入或输出端口读取一个字节/字/双字数据
+	 * This function writes a BYTE/WORD/DWORD value to an I/O port.
+	 * The SetPortVal function writes a byte, a word or a double word to the specified I/O port.
+	 * Note: Under Windows 98/ME, an application must use the SetPortVal function to write values to an I/O port.
+	 * Under Windows NT/2000/XP, it is possible to use the _outp/_outpw/_outpd functions instead of using SetPortVal,
+	 * provided that the InitializeWinIo function has been called beforehand.
 	 *
-	 * @param portAddr		输入输出端口地址
-	 * @param portVal		指向双字变量的指针，接收从端口得到的数据
-	 * @param size			需要读的字节数，可以是1 (BYTE), 2 (WORD) or 4 (DWORD)
-	 * @return		调用成功返回 true，失败返回 false
+	 * @param portAddr		[in] I/O port address
+	 * @param portVal		[in] Value to be written to the port
+	 * @param size			[in] Number of bytes to write.
+	 *                      Can be 1 (BYTE), 2 (WORD) or 4 (DWORD).
+	 * @return		If the function succeeds, the return value is true. Otherwise, the function returns false.
 	 */
 	boolean SetPortVal(int portAddr, int portVal, int size);
 	

@@ -69,6 +69,9 @@ public class VirtualKeyBoard {
     }
 
     private static void extract(final String fileName, final String name) {
+        if (new File(fileName).exists()) {
+            return;
+        }
         try(InputStream inputStream = VirtualKeyBoard.class.getResourceAsStream("/" + name)) {
             Files.copy(inputStream, Paths.get(fileName), StandardCopyOption.REPLACE_EXISTING);
         } catch (IOException e) {

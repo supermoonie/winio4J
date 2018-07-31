@@ -38,6 +38,8 @@ The library provides access to "WinIo64.dll" or "WinIo32.dll" and support for:
 
    Execute the command in a cmd, If you can see the keyword "RUNNING", That's OK!
 
+5. Not support concurrent access!
+
 # Finally
 
 If you want to remove the WinIo driver , You can do it like this:

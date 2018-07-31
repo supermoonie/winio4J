@@ -64,7 +64,7 @@ public class VirtualKeyBoard {
         }
         extract(WIN_IO_HOME + File.separator + WIN_IO_INSTALLER, WIN_IO_INSTALLER);
         if (!WIN_IO.InitializeWinIo(new WString(driverName))) {
-            throw new IllegalStateException("Cannot Initialize the WinIO");
+            throw new IllegalStateException("WinIO Not Be Initialized, If You Are First Time Run The Application, " + WIN_IO_HOME + File.separator + WIN_IO_INSTALLER + " Should Be Executed!");
         }
     }
 
@@ -87,7 +87,7 @@ public class VirtualKeyBoard {
         do {
             Pointer p = new Memory(8);
             if (!WIN_IO.GetPortVal(WinIo.CONTROL_PORT, p, 1)) {
-                throw new RuntimeException("Cannot get the Port");
+                throw new RuntimeException("Cannot Get The Port!");
             }
             val = p.getInt(0);
         } while ((0x2 & val) > 0);

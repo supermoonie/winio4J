@@ -24,7 +24,7 @@ The library provides access to "WinIo64.dll" or "WinIo32.dll" and support for:
 
    Then reboot your computer.
 
-3. Provided that the "WinIoInstall.exe" has been called beforehand. It will install WinIo driver on your system.
+3. Provided that the [WinIoInstall.exe](https://github.com/supermoonie/winio4J/tree/master/src/main/resources) has been called beforehand. It will install WinIo driver on your system.
 
 4. To make sure the WinIo driver has been installed on your system:
 

@@ -16,15 +16,17 @@ The library provides access to "WinIo64.dll" or "WinIo32.dll" and support for:
 
 # Notice
 
-1. If your Windows is 64 Bit , This command should be run as Administrator in cmd:
+1. If desktops , You need a keyboard which interface is PS/2.
+
+2. If your Windows is 64 Bit , This command should be run as Administrator in cmd:
 
    > bcdedit /set testsigning on 
 
    Then reboot your computer.
 
-2. Provided that the "WinIoInstall.exe" has been called beforehand. It will install WinIo driver on your system.
+3. Provided that the "WinIoInstall.exe" has been called beforehand. It will install WinIo driver on your system.
 
-3. To make sure the WinIo driver has been installed on your system:
+4. To make sure the WinIo driver has been installed on your system:
 
    > sc query winio
 

@@ -6,6 +6,16 @@ A Java JNA wrapper for WinIo.
 
 WinIo4J is released and distributed under the [Apache License, v2.0](http://www.apache.org/licenses/LICENSE-2.0).
 
+# Usage
+
+```
+<dependency>
+    <groupId>com.github.supermoonie</groupId>
+    <artifactId>winio4J</artifactId>
+    <version>1.01</version>
+</dependency>
+```
+
 # Features
 
 The library provides access to "WinIo64.dll" or "WinIo32.dll" and support for:
@@ -28,7 +38,7 @@ The library provides access to "WinIo64.dll" or "WinIo32.dll" and support for:
 
    Or 
 
-   Provided that the [WinIoInstall.exe](https://github.com/supermoonie/winio4J/tree/master/src/main/resources) has been called beforehand.
+   Execute [WinIoInstall.exe](https://github.com/supermoonie/winio4J/tree/master/src/main/resources) (You can run your application first, Then the folder "winIo" will be found on your desktop).
 
    It will install WinIo driver on your system.
 

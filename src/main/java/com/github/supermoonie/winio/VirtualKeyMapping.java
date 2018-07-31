@@ -25,7 +25,6 @@ import java.util.Map;
  * https://www.win.tue.nl/~aeb/linux/kbd/scancodes-1.html
  *
  * @author supermoonie
- * @date 2018/7/27
  */
 public class VirtualKeyMapping {
 

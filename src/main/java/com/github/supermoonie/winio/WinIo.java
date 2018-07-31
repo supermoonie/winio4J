@@ -28,7 +28,6 @@ import com.sun.jna.win32.W32APIOptions;
  * Provides access to the WinIo64.dll or WinIo32.dll library.
  *
  * @author supermoonie
- * @date 2018/7/27
  */
 public interface WinIo extends Library {
 
